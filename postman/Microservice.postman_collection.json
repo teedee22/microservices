@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "935393a6-e2b9-43c2-b56f-3d6ce1efca08",
+		"name": "Microservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sleep Count Amount",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"message\": \"hello toby\",\n    \"count\": 2,\n    \"id\": 13\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{url}}:4000/new",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"port": "4000",
+					"path": [
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Healthcheck",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "00b61a54-2a69-418e-83b3-139a7556c453",
+						"exec": [
+							"pm.test(\"Healthcheck proxy is running\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{url}}:4000/",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"port": "4000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sleep Random amount (calls Sleepy API)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\": \"whats up\",\r\n    \"count\": 4,\r\n    \"id\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{url}}:4000/new2",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"port": "4000",
+					"path": [
+						"new2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
