@@ -1,7 +1,8 @@
 # Overall architecture
 
 # Summary
-This is a proof of concept for a microservice distributed system running on k8s. 
+This is a proof of concept for a microservice distributed system running on k8s.
+
 I will use it as a sandbox to test different deployment methods. 
 
 ![Interaction Diagram](./diagrams/interactions.png)
@@ -16,10 +17,10 @@ I will use it as a sandbox to test different deployment methods.
 ## 1. HTTP ingress proxy 
 https://gitlab.com/teedee22/http-proxy
 
-Lightweight API written in python (Flask). It receives http POST and GET requests and publishes to NATS 
+Lightweight API written in python (Flask). It receives http POST and GET requests and publishes to NATS.
 
 ## 2. NATS Core
-NATS Core is a lightweight Pub Sub streaming services
+NATS Core is a lightweight Pub Sub streaming service.
 
 *docs: https://nats.io/*
 
